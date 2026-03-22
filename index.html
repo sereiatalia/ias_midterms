@@ -163,7 +163,7 @@ body{font-family:'Quicksand',sans-serif;background:var(--bg);min-height:100vh;ov
       </div>
       <div class="info-pills">
         <div class="pill">📋 35 Questions per Set</div>
-        <div class="pill">🗂️ 70+ Question Bank</div>
+        <div class="pill">🗂️ 110+ Question Bank</div>
         <div class="pill">⏱️ No Time Limit</div>
         <div class="pill">📊 Instant Feedback</div>
       </div>
@@ -268,7 +268,7 @@ const BANK = [
   {core:true, q:"You're advising a team on improving password policy after discovering reused and guessable employee credentials. Which of the following is the BEST recommendation?",opts:["Encrypt passwords with ROT13","Store passwords in browser autofill","Use 8-12 alphanumeric characters with symbols","Use names, addresses, and birthdays as passwords"],ans:2},
   {core:true, q:"Mark, a professional hacker, scanned the target system to check for running services or open ports. He discovered an open FTP port, exploited it to install malware, and performed malicious activities on the victim's system. In which of the following ways did Mark install malware?",opts:["Using email attachments","Using file-sharing services","Using rogue/decoy applications","Using insecure patch updates"],ans:1},
 
-  // ── EXTRA 35 (from 03_Handout & 04_Handout) ──────────────────
+  // ── EXTRA 75+ (from 03_Handout & 04_Handout) ─────────────────
   // Password attack types
   {core:false, q:"Which of the following password attacks involves loading a text file of common words into a cracking tool that tries each word to discover the password?",opts:["Brute-Force Attack","Dictionary Attack","Syllable Attack","Wire Sniffing"],ans:1},
   {core:false, q:"In a brute-force attack, which of the following BEST describes the technique used to crack a password?",opts:["Every dictionary word is tried sequentially","Every possible character combination is attempted","Only known password patterns are guessed","Packets are captured and replayed"],ans:1},
@@ -313,7 +313,136 @@ const BANK = [
   {core:false, q:"A security professional uses Nessus, Qualys, or GFI LanGuard to automatically scan systems for vulnerabilities. What type of assessment is this?",opts:["Manual Assessment","Credentialed Assessment","Automated Assessment","Passive Assessment"],ans:2},
   {core:false, q:"Which type of vulnerability assessment does NOT require credentials and provides a quick overview of weaknesses but is prone to false-positive outputs?",opts:["Credentialed Assessment","Non-credentialed Assessment","Host-based Assessment","Application Assessment"],ans:1},
   {core:false, q:"Which phase of the vulnerability management cycle involves applying fixes to vulnerable systems to reduce the impact and severity of vulnerabilities?",opts:["Verification","Risk Assessment","Remediation","Vulnerability Scan"],ans:2},
-  {core:false, q:"Which phase of the vulnerability management cycle involves re-scanning systems to confirm that required fixes have been properly applied to impacted assets?",opts:["Remediation","Risk Assessment","Monitor","Verification"],ans:3}
+  {core:false, q:"Which phase of the vulnerability management cycle involves re-scanning systems to confirm that required fixes have been properly applied to impacted assets?",opts:["Remediation","Risk Assessment","Monitor","Verification"],ans:3},
+
+  // ── Additional questions covering remaining PDF content ──────────
+
+  // 04_Handout — Virus
+  {core:false, q:"A self-replicating program that produces its code by attaching copies of itself to other executable code and operates without the knowledge or consent of the user. What is this?",
+   opts:["Computer Worm","Trojan","Virus","Rootkit"],ans:2},
+
+  {core:false, q:"Which of the following is TRUE about a computer virus compared to a computer worm?",
+   opts:["A virus can spread across a network without any user assistance","A virus can infect external machines only with the assistance of computer users","A virus does not require a host file to replicate","A virus resides only in the system's RAM"],ans:1},
+
+  {core:false, q:"Which of the following is NOT a type of computer virus?",
+   opts:["Boot Sector Virus","File Virus","Botnet Virus","Stealth Virus"],ans:2},
+
+  // 04_Handout — Password Countermeasures (uncovered ones)
+  {core:false, q:"According to password attack countermeasures, what should the password change policy be set to?",
+   opts:["7 days","14 days","30 days","60 days"],ans:2},
+
+  {core:false, q:"Which password countermeasure involves using a random string as a password prefix or suffix before performing encryption to nullify pre-computation and memorization?",
+   opts:["Password salting","Password hashing","Password masking","Password tokenization"],ans:0},
+
+  {core:false, q:"According to password attack countermeasures, what HTTP status code is recorded in the web server logs for each unsuccessful login attempt?",
+   opts:["HTTP 400","HTTP 401","HTTP 403","HTTP 404"],ans:1},
+
+  {core:false, q:"Which of the following is a recommended countermeasure to protect against brute-force and guessing attacks?",
+   opts:["Store passwords in plaintext for quick access","Lock out accounts subjected to too many incorrect password guesses","Disable password expiration policies","Allow unlimited login attempts"],ans:1},
+
+  {core:false, q:"According to the password attack countermeasures in the handout, which of the following should be performed periodically within the organization?",
+   opts:["System reboot","Password audit","Network disconnection","Software reinstallation"],ans:1},
+
+  {core:false, q:"Which of the following is a step involved in password guessing?",
+   opts:["Inject hash into the system","Rank passwords from high to low probability","Capture packets on the network","Use a time-memory trade-off algorithm"],ans:1},
+
+  {core:false, q:"Password guessing involves attempting to log on with different passwords manually. What does the attacker do FIRST in password guessing?",
+   opts:["Key in each password until the correct one is found","Rank passwords from high to low probability","Find a valid user","Create a list of possible passwords"],ans:2},
+
+  {core:false, q:"Which of the following password cracking tools is known for using a dictionary, hybrid, rainbow table, and brute-force attacks and also checks password strength?",
+   opts:["Medusa","Hashcat","RainbowCrack","L0phtCrack"],ans:3},
+
+  {core:false, q:"Which of the following password cracking tools cracks hashes using a time-memory trade-off algorithm and pre-computes all possible plaintext hash pairs in advance?",
+   opts:["L0phtCrack","Ophcrack","RainbowCrack","Medusa"],ans:2},
+
+  {core:false, q:"Which of the following is listed as an active online attack technique?",
+   opts:["Wire sniffing","Man-in-the-middle attack","LLMNR/NBT-NS poisoning","Replay attack"],ans:2},
+
+  {core:false, q:"Which of the following is a technique used in passive online attacks?",
+   opts:["Password guessing","Dictionary attack","Replay attack","Brute-force attack"],ans:2},
+
+  // 03_Handout — Threats (CIA, threat definition, examples)
+  {core:false, q:"What is a threat in the context of information security?",
+   opts:["A weakness in the design or implementation of a system","The potential occurrence of an undesirable event that can damage and disrupt the operational and functional activities of an organization","A tool used by attackers to gain unauthorized access","A type of software that monitors network traffic"],ans:1},
+
+  {core:false, q:"Which of the following can threats to data assets cause?",
+   opts:["Loss of confidentiality, integrity, or availability (CIA) of data","Increased system performance","Automatic software updates","Improved network bandwidth"],ans:0},
+
+  {core:false, q:"The criticality of a threat is based on which of the following factors?",
+   opts:["The size of the organization and number of employees","How much damage it can cause, how uncontrollable it is, and the complexity of identifying the threat in advance","The type of operating system used and software version","The number of network devices and bandwidth available"],ans:1},
+
+  {core:false, q:"Which of the following is an example of an internal threat?",
+   opts:["A competitor company performing corporate espionage","An earthquake damaging physical servers","A disgruntled employee intentionally leaking sensitive data","A script kiddie using freely available tools to crash a website"],ans:2},
+
+  {core:false, q:"Why are internal threats considered MORE dangerous than external threats?",
+   opts:["Internal attackers have better hacking tools","Insiders are familiar with the network architecture, security policies, and regulations of the organization","Internal threats always result in physical damage","External threats are easier to detect and prevent"],ans:1},
+
+  // 03_Handout — Malware additional
+  {core:false, q:"A malware is a piece of malicious software designed to perform activities as intended by the attacker, without user consent. Which of the following is NOT a form of malware?",
+   opts:["Executable code","Active content","Scripts","Firewall rules"],ans:3},
+
+  {core:false, q:"Which of the following BEST describes how a Trojan is activated?",
+   opts:["It automatically spreads through the network without any user action","It is activated upon users' specific predefined actions such as clicking a malicious link","It infects external machines only with user assistance","It resides in RAM and injects code into running processes"],ans:1},
+
+  {core:false, q:"Which of the following examples of ransomware is listed in the handout?",
+   opts:["Stuxnet","WannaCry","ILOVEYOU","Mirai"],ans:1},
+
+  {core:false, q:"What is the GOAL of a rootkit?",
+   opts:["To encrypt user files and demand ransom","To record keystrokes and send them to the attacker","To gain root privileges on a system without being detected","To replicate and spread across a network"],ans:2},
+
+  {core:false, q:"Which of the following BEST describes how spyware infects a user's system?",
+   opts:["It spreads through the network without user interaction","It is installed by visiting a fraudulent website containing malicious code","It is activated when the user clicks on a suspicious email attachment","It gains root privileges by exploiting OS vulnerabilities"],ans:1},
+
+  {core:false, q:"PUAs or Grayware are most commonly installed when:",
+   opts:["The user accesses a banking website","The user downloads freeware using a third-party installer or accepts a misleading license agreement","The user connects to an open FTP port","The OS is not patched or updated"],ans:1},
+
+  {core:false, q:"Which of the following is a type of PUA (Potentially Unwanted Application)?",
+   opts:["Ransomware","Rootkit","Adware","Keylogger"],ans:2},
+
+  // 03_Handout — Vulnerability types (uncovered)
+  {core:false, q:"Which vulnerability type is usually user-friendly when a device is used for the first time, but failing to change its default settings allows an attacker to guess the settings to break into the system?",
+   opts:["Buffer Overflow","Default Installations","Open Services","Application Flaw"],ans:1},
+
+  {core:false, q:"Which vulnerability type results from organizations running unpatched and misconfigured servers that serve as entry points into the network for attackers?",
+   opts:["Design Flaw","Legacy Platform Vulnerability","Unpatched Servers","Buffer Overflow"],ans:2},
+
+  {core:false, q:"Due to vulnerabilities in operating systems, applications such as trojans, worms, and viruses pose threats. What is this vulnerability type called?",
+   opts:["Design Flaw","Application Flaw","Operating System Flaw","Buffer Overflow"],ans:2},
+
+  {core:false, q:"Which vulnerability type occurs when applications are not secured using validation and authorization of the user, leading to threats such as data tampering and unauthorized access to configuration stores?",
+   opts:["OS Flaws","Application Flaws","Open Services","Default Installations"],ans:1},
+
+  {core:false, q:"What is a vulnerability in information security?",
+   opts:["A type of malware that encrypts user files","A weakness in the design or implementation of a system that can be exploited to compromise its security","A tool used to scan for open ports on a network","A countermeasure used to prevent unauthorized access"],ans:1},
+
+  {core:false, q:"Which of the following is a common reason for the existence of vulnerabilities?",
+   opts:["Regular software patching","Hardware or software misconfiguration","Use of strong password policies","Frequent security audits"],ans:1},
+
+  // 03_Handout — Vulnerability Assessment
+  {core:false, q:"What is a vulnerability assessment?",
+   opts:["A process of installing security patches on all systems in a network","An in-depth examination of the ability of a system or application to withstand exploitation; it scans for known security weaknesses","A type of attack simulation where the attacker performs real exploitation","A tool that automatically fixes all detected vulnerabilities"],ans:1},
+
+  {core:false, q:"Which type of vulnerability assessment sniffs network traffic to identify active systems, services, and vulnerabilities, and also provides a list of users currently accessing the network?",
+   opts:["Active Assessment","External Assessment","Passive Assessment","Credentialed Assessment"],ans:2},
+
+  {core:false, q:"Which vulnerability assessment type scrutinizes the internal network to find exploits and vulnerabilities?",
+   opts:["External Assessment","Host-based Assessment","Network-based Assessment","Internal Assessment"],ans:3},
+
+  {core:false, q:"Which type of vulnerability assessment determines vulnerabilities in an organization's wireless networks and tests wireless authentication mechanisms?",
+   opts:["Host-based Assessment","Wireless Network Assessment","Network-based Assessment","Application Assessment"],ans:1},
+
+  // 03_Handout — Vulnerability Management Cycle (uncovered phases)
+  {core:false, q:"Which phase of the vulnerability management cycle identifies critical assets, prioritizes them based on criticality and value, and develops a system baseline?",
+   opts:["Risk Assessment","Vulnerability Scan","Identify Assets and Create a Baseline","Remediation"],ans:2},
+
+  {core:false, q:"In the vulnerability management cycle, which phase assesses all serious uncertainties associated with the system, prioritizes them, and plans remediation to permanently eliminate system flaws?",
+   opts:["Vulnerability Scan","Risk Assessment","Verification","Monitor"],ans:1},
+
+  {core:false, q:"Which phase of the vulnerability management cycle uses tools such as IDS/IPS and firewalls to perform regular checks that identify potential threats and new vulnerabilities that have evolved?",
+   opts:["Verification","Remediation","Risk Assessment","Monitor"],ans:3},
+
+  {core:false, q:"In the vulnerability management cycle, which phase involves the security analyst performing a scan on the network to identify known vulnerabilities in the organization's infrastructure?",
+   opts:["Identify Assets and Create a Baseline","Risk Assessment","Vulnerability Scan","Monitor"],ans:2}
 ];
 
 // ═══════════════════════════════════════
